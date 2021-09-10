@@ -3,6 +3,7 @@
 
 ## Write a short comment describing this function
 
+library(MASS)
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
 
@@ -29,7 +30,7 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  m <- mean(data, ...)
+  m <- solve(data, ...)
   x$setsolve(m)
   m
 }
